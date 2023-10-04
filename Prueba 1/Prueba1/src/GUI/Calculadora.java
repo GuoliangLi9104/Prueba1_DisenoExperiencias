@@ -575,7 +575,7 @@ public class Calculadora extends javax.swing.JFrame {
             } else if (operacion.equals("porcentaje")) {
             segundoNumero = Double.parseDouble(cadenaNumeros);
            
-                resultado = primerNumero % segundoNumero;
+                resultado = primerNumero * (segundoNumero/100);
                 lblNumeros.setText(String.format("% .2f", resultado));
                 cadenaNumeros = String.valueOf(resultado);
                 operacion = "nula";
