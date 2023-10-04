@@ -219,6 +219,11 @@ public class Calculadora extends javax.swing.JFrame {
         jPanel1.add(btnDivision, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 60, 50));
 
         btnPorcentaje.setText("%");
+        btnPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPorcentajeActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 70, 50));
 
         btn4.setText("4");
@@ -567,6 +572,14 @@ public class Calculadora extends javax.swing.JFrame {
                 cadenaNumeros = String.valueOf(resultado);
                 operacion = "nula";
             }
+            } else if (operacion.equals("porcentaje")) {
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+           
+                resultado = primerNumero % segundoNumero;
+                lblNumeros.setText(String.format("% .2f", resultado));
+                cadenaNumeros = String.valueOf(resultado);
+                operacion = "nula";
+            
         }
         lblMuestra.setText("");
         activado = true;
@@ -633,12 +646,15 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnMODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMODActionPerformed
-        primerNumero = Double.parseDouble(cadenaNumeros);
-        lblMuestra.setText("sqrt(" + cadenaNumeros + ")");
-        resultado = Math.sqrt(primerNumero);
-        lblNumeros.setText(String.format("% 2f", resultado));
-        cadenaNumeros = String.valueOf(resultado); // Convertimos el valor en Cadena
-        punto = true;
+          if (activado == true) {
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " / ");
+            cadenaNumeros = "";
+            operacion = "dividir";
+
+            activado = false;
+            punto = true;
+        }
     }//GEN-LAST:event_btnMODActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -652,6 +668,18 @@ public class Calculadora extends javax.swing.JFrame {
           lblNumeros.setText(cadenaNumeros);
       }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void btnPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeActionPerformed
+         if (activado == true) {
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            lblMuestra.setText(cadenaNumeros + " % ");
+            cadenaNumeros = "";
+            operacion = "porcentaje";
+
+            activado = false;
+            punto = true;
+        }
+    }//GEN-LAST:event_btnPorcentajeActionPerformed
 
     public static void main(String args[]) {
 
