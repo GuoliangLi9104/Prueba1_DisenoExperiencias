@@ -1,4 +1,5 @@
-
+package GUI;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Li
@@ -154,6 +155,11 @@ public class Calculadora extends javax.swing.JFrame {
         jPanel1.add(btnMMenos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 70, 50));
 
         jButton7.setText("<--");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 60, 50));
 
         btnCE.setText("CE");
@@ -329,6 +335,7 @@ public class Calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaActionPerformed
+        
         if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             lblMuestra.setText(cadenaNumeros + " - ");
@@ -341,6 +348,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRestaActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
             cadenaNumeros = "0";
             cadenaMemory = "0";
@@ -350,10 +358,11 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora
-
+       }
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
             cadenaNumeros = "1";
             cadenaMemory = "1";
@@ -363,6 +372,7 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora
+       }
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
@@ -378,6 +388,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
              cadenaNumeros = "3";
             cadenaMemory = "3";
@@ -387,9 +398,12 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora 
+       }
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+       if(lblNumeros.getText().length() != 10){
+           
         if (lblNumeros.getText().equals("0")) {
             cadenaNumeros = "4";
             cadenaMemory = "4";
@@ -399,9 +413,13 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora  
+       }else{
+           JOptionPane.showMessageDialog(null, "Muchos caracteres ");
+       }
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
              cadenaNumeros = "5";
             cadenaMemory = "5";
@@ -411,9 +429,11 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora 
+       }
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
              cadenaNumeros = "6";
             cadenaMemory = "6";
@@ -422,10 +442,12 @@ public class Calculadora extends javax.swing.JFrame {
             cadenaMemory += "6";
         }
         lblNumeros.setText(cadenaNumeros);
-        activado = true;// Voy a usar la calculadora  
+        activado = true;// Voy a usar la calculadora 
+       }
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
               cadenaNumeros = "7";
             cadenaMemory = "7";
@@ -435,9 +457,11 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora
+       }
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+       if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
            cadenaNumeros = "8";
             cadenaMemory = "8";
@@ -447,9 +471,11 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora
+       }
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+      if(lblNumeros.getText().length() != 10){
         if (lblNumeros.getText().equals("0")) {
            cadenaNumeros = "9";
             cadenaMemory = "9";
@@ -459,9 +485,11 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblNumeros.setText(cadenaNumeros);
         activado = true;// Voy a usar la calculadora 
+      }
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaActionPerformed
+       
         if (activado == true) {
             primerNumero = Double.parseDouble(cadenaNumeros);
             lblMuestra.setText(cadenaNumeros + " + ");
@@ -565,7 +593,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMRActionPerformed
 
     private void btnMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMSActionPerformed
-        // TODO add your handling code here:
+        lblMuestra.setText(cadenaMemory.toString());
     }//GEN-LAST:event_btnMSActionPerformed
 
     private void btnMMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMMasActionPerformed
@@ -612,6 +640,18 @@ public class Calculadora extends javax.swing.JFrame {
         cadenaNumeros = String.valueOf(resultado); // Convertimos el valor en Cadena
         punto = true;
     }//GEN-LAST:event_btnMODActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        int tamaño = cadenaNumeros.length();
+      if(tamaño > 0){
+          if(tamaño == 1){
+              cadenaNumeros = "1";
+          }else{
+              cadenaNumeros = cadenaNumeros.substring(0, cadenaNumeros.length() - 1);
+          }
+          lblNumeros.setText(cadenaNumeros);
+      }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     public static void main(String args[]) {
 
